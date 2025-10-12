@@ -16,4 +16,5 @@
 
       // show in alert
       alert(fullName);
+	 false;
     }
