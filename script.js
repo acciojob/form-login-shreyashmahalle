@@ -1,15 +1,14 @@
-function getFormValue() {
-      // get form inputs
-      var first = document.querySelector('[name="fname"]').value.trim();
-      var last = document.querySelector('[name="lname"]').value.trim();
+function getFormvalue(event) {
+  event.preventDefault(); // prevent form submission reload
 
-      // join them and alert
-      var fullName = (first + " " + last).trim();
-      alert(fullName);
-    }
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
 
-    // ensure function runs when form is submitted
-    document.getElementById("myForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      getFormValue();
-    });
+  const fullName = `${fname} ${lname}`.trim();
+
+  if (fullName) {
+    alert(fullName);
+  } else {
+    alert("Please enter your name.");
+  }
+}
